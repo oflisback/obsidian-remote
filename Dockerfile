@@ -13,7 +13,7 @@ RUN echo "**** install packages ****" && \
     apt-get autoclean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # Set version label
-ARG OBSIDIAN_VERSION=1.3.5
+ARG OBSIDIAN_VERSION=1.4.13
 
 # Download and install Obsidian
 RUN echo "**** download obsidian ****" && \
@@ -27,7 +27,8 @@ ENV CUSTOM_PORT="8080" \
     PASSWORD="" \
     SUBFOLDER="" \
     TITLE="Obsidian v${OBSIDIAN_VERSION}" \
-    FM_HOME="/vaults"
+    FM_HOME="/vaults" \
+    TZ="Europe/Stockholm"
 
 # Add local files
 COPY root/ /
